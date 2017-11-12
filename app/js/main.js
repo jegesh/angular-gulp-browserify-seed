@@ -12,7 +12,7 @@
 
   .config([
     '$routeProvider',
-    function($locationProvider, $routeProvider) {
+    function($routeProvider) {
       
         // routes
       $routeProvider
@@ -24,7 +24,7 @@
            redirectTo: '/'
         });
     }
-  ])
+  ]);
 
   //Load controller
   require('./controllers/mainctrl');

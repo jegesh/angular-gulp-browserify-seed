@@ -15,15 +15,18 @@ var runSequence = require('run-sequence');
 
 // tasks
 gulp.task('lint', function() {
-  gulp.src(['./app/js/**/*.js', '!./app/js/bundled.js', '!./app/js/vendor/*.js'])
+  gulp.src(['./app/js/**/*.js', 
+      '!./app/js/bundled.js', 
+      '!./app/js/vendor/*.js'
+  ])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'));
 });
 gulp.task('watch', function () {
-    watch(['./app/**/*', '!./app/js/bundled.js'], batch(function (events, done) {
+    watch(['./app/**/*', '!./app/js/bundled.js'], 
+    batch(function (events, done) {
         gulp.start('clean', 'browserify', done);
-//        gulp.start('browserify', done);
     }));
 });
 gulp.task('clean', function() {

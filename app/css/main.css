@@ -1,1 +1,4 @@
 /* css */
+
+/* workaround for issue in angular-ui: see https://angular-ui.github.io/bootstrap/ */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

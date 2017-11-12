@@ -5,16 +5,16 @@
   require('angular');
   require('angular-route');
   require('angular-animate');
-  var mainCtrl = require('./controllers/mainctrl');
+  require('angular-touch');
+  require('angular-ui-bootstrap');
 
-  angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
+  angular.module('SampleApp', ['ngRoute', 'ngAnimate', 'ngTouch', 'ui.bootstrap'])
 
   .config([
-    '$locationProvider',
     '$routeProvider',
     function($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
-      // routes
+      
+        // routes
       $routeProvider
         .when("/", {
           templateUrl: "./partials/partial1.html",
@@ -27,6 +27,6 @@
   ])
 
   //Load controller
-  .controller('MainController', ['$scope', mainCtrl]);
+  require('./controllers/mainctrl');
 
 }());
